@@ -2,8 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import Post from "./Post";
 
-const Posts = () => {
-    const [renderFlag, setRenderFlag] = useState(false)
+const Posts = ({renderFlag, setRenderFlag}) => {
     const [posts, setPosts] = useState([])
 
     useEffect(() => {

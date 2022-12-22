@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import ModalWindow from "./modalWindow";
 
-const AddPost = () => {
+const AddPost = ({setRenderFlag, renderFlag}) => {
     const [show, setShow] = useState(false)
     return (
         <>
@@ -12,7 +12,12 @@ const AddPost = () => {
                     className='rounded-lg bg-black text-white py-1 w-52 flex justify-center '
                 >Создать новый пост</div>
             </div>
-            <ModalWindow modalShow={show} setShow={setShow}/>
+            <ModalWindow
+                modalShow={show}
+                setShow={setShow}
+                setRenderFlag={setRenderFlag}
+                renderFlag={renderFlag}
+            />
         </>
     );
 };
