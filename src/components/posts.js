@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
-import Post from "./Post";
+import Post from "./post/Post";
 
 const Posts = ({renderFlag, setRenderFlag}) => {
     const [posts, setPosts] = useState([])
@@ -47,13 +47,11 @@ const Posts = ({renderFlag, setRenderFlag}) => {
                 ?
                     posts.map((item, num) => (
                         <Post
-                            key={item.id}
-                            id={item.id}
-                            title={item.title}
-                            description={item.description}
+                            {...item}
                             number={num}
                             deletePost={deletePost}
-                            handleLikeChange={handleLikeChange}
+                            setRenderFlag={setRenderFlag}
+                            renderFlag={renderFlag}
                         />
                     ))
                 : <h1>loading</h1>
