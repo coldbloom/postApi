@@ -8,10 +8,12 @@ function App() {
     const [renderFlag, setRenderFlag] = useState(false)
 
     return (
-        <div className='container'>
-            {/*<Liker />*/}
-            <AddPost setRenderFlag={setRenderFlag} renderFlag={renderFlag}/>
-            <Posts setRenderFlag={setRenderFlag} renderFlag={renderFlag}/>
+        <div className='w-full mr-auto ml-auto flex justify-center'>
+            <div className='container'>
+                {/*<Liker />*/}
+                <AddPost setRenderFlag={setRenderFlag} renderFlag={renderFlag}/>
+                <Posts setRenderFlag={setRenderFlag} renderFlag={renderFlag}/>
+            </div>
         </div>
     );
 }
