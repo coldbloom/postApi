@@ -28,13 +28,33 @@ const Posts = ({renderFlag, setRenderFlag}) => {
             })
     }
 
+    const handleLikeChange = (postId) => {
+        axios
+            .put(`https://5fb3db44b6601200168f7fba.mockapi.io/api/posts/${postId}`)
+            .catch(err => {
+                console.log(err)
+            })
+            .then(response => {
+                console.log('запрос успешно изменен!', response.data)
+                setRenderFlag(!renderFlag)
+            })
+    }
+
     return (
         <div>
             {
                 posts.length !== 0
                 ?
                     posts.map((item, num) => (
-                        <Post key={item.id} id={item.id}  title={item.title} description={item.description} number={num} deletePost={deletePost}/>
+                        <Post
+                            key={item.id}
+                            id={item.id}
+                            title={item.title}
+                            description={item.description}
+                            number={num}
+                            deletePost={deletePost}
+                            handleLikeChange={handleLikeChange}
+                        />
                     ))
                 : <h1>loading</h1>
             }

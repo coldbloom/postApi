@@ -1,10 +1,12 @@
 import React from 'react';
 import {FaHeart} from 'react-icons/fa'
 import {FaTrashAlt} from 'react-icons/fa'
+import axios from "axios";
 
-const Post = ({title, description, number, deletePost, id}) => {
+const Post = ({title, description, number, deletePost, handleLikeChange, id}) => {
+
     return (
-        <div>
+        <div className='py-5'>
             <div className='flex flex-row px-2'>
                 <div>
                     <h3 className='text-xl font-semibold'>{number + ' ' + title}</h3>
@@ -19,7 +21,9 @@ const Post = ({title, description, number, deletePost, id}) => {
                 />
             </div>
             <div className='px-2 '>
-                <FaHeart size={22}
+                <FaHeart
+                    size={22}
+                    onClick={() => handleLikeChange(id)}
                 />
             </div>
         </div>
