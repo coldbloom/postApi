@@ -3,7 +3,6 @@ import {FaHeart} from 'react-icons/fa'
 import {FaTrashAlt} from 'react-icons/fa'
 import axios from "axios";
 import s from './Post.module.css'
-import cn from 'classnames'
 
 const Post = ({id, title, description, liked, number, deletePost, setRenderFlag, renderFlag}) => {
 
